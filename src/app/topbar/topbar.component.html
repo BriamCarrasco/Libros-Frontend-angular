@@ -1,1 +1,9 @@
-<p>topbar works!</p>
+<nav class="navbar navbar-dark topbar justify-content-between px-5 shadow">
+  <div class="d-flex align-items-center w-100">
+    <a class="navbar-brand m-0 p-0" href="#">
+    <img [src]="'assets/logo.png'" alt="" width="60">
+    </a>
+    <h1 class="text-white mb-0 ms-5" style="font-size: 2rem;">Administración de Libros</h1>
+    <span class="text-white ms-auto" style="font-size: 1.2rem;">{{ fechaHora() }}</span>
+  </div>
+</nav>   
