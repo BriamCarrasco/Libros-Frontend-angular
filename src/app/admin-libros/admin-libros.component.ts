@@ -14,6 +14,7 @@ export class AdminLibrosComponent implements OnInit {
   valorBusqueda: string = '';
   accionModal: 'crear' | 'editar' = 'crear';
   libroEditando: Partial<Libro> = {};
+  page: number = 1;
 
   constructor(private librosService: AdminLibrosService) {}
 

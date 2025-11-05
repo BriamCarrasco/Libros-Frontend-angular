@@ -30,6 +30,8 @@ h2 {
   overflow: hidden;
   margin-top: 30px;
   margin-bottom: 30px;
+  table-layout: fixed !important; /* fija tamaños de columnas */
+  width: 100%;
 }
 
 .custom-table thead tr,
@@ -56,6 +58,23 @@ h2 {
   font-family: inherit;
   background: transparent;
   transition: 0.3s all ease;
+  /* Truncar contenido para evitar cambios de ancho */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Hover filas */
+.custom-table tbody tr {
+  background: #eceaf3;
+  color: #222;
+  transition: 0.3s all ease;
+}
+
+.custom-table tbody tr:hover td,
+.custom-table tbody tr:focus td {
+  color: #222;
+  background: #e0dff0;
 }
 
 .custom-table tbody th small,
@@ -70,40 +89,27 @@ h2 {
   transition: color 0.3s;
 }
 
-.custom-table tbody th .more,
-.custom-table tbody td .more {
-  color: #888;
-  font-size: 11px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  background: transparent;
-}
-
-.custom-table tbody tr {
-  background: #eceaf3;
-  color: #222;
-  transition: 0.3s all ease;
-}
-
-.custom-table tbody tr:hover td,
-.custom-table tbody tr:focus td {
-  color: #222;
-  background: #e0dff0;
-}
-
-.custom-table tbody tr:hover td a,
-.custom-table tbody tr:focus td a {
+.custom-table tbody tr:hover td a {
   background: #e0dff0;
   color: #fdd114;
 }
 
-.custom-table tbody tr:hover td .more,
-.custom-table tbody tr:focus td .more {
+.custom-table tbody tr:hover td .more {
   color: #fdd114;
   background: #e0dff0;
 }
 
+/* Alineación opcional */
+.custom-table th:nth-child(1),
+.custom-table td:nth-child(1),
+.custom-table th:nth-child(4),
+.custom-table td:nth-child(4),
+.custom-table th:nth-child(6),
+.custom-table td:nth-child(6) {
+  text-align: center;
+}
+
+/* Botones */
 .custom-button {
   background: #36304a;
   border: none;
@@ -130,3 +136,117 @@ h2 {
   transition: 0.3s all ease;
 }
 
+/* Inputs y selects */
+form input.form-control {
+  border: 2px solid #36304a !important;
+  box-shadow: none;
+}
+
+form select.form-select.rounded-pill {
+  border: 2px solid #36304a !important;
+  box-shadow: none;
+}
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+:host ::ng-deep pagination-controls {
+  display: block;
+  text-align: center;
+}
+
+:host ::ng-deep pagination-controls .ngx-pagination {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  margin: 0 auto !important; 
+  padding-left: 0 !important;
+}
+
+:host ::ng-deep .ngx-pagination li:not(.pagination-previous):not(.pagination-next):not(.disabled) a,
+:host ::ng-deep .ngx-pagination li:not(.pagination-previous):not(.pagination-next):not(.current) a {
+  background: #888 !important;
+  border: none !important;
+  color: #fff !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.2rem !important;
+  border-radius: 50% !important;
+  width: 38px !important;
+  height: 38px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 2px !important;
+  transition: 0.3s all ease !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+  outline: none !important;
+}
+
+:host ::ng-deep .ngx-pagination li.current span {
+  background: #36304a !important;
+  border: none !important;
+  color: #fff !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.2rem !important;
+  border-radius: 50% !important;
+  width: 38px !important;
+  height: 38px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 2px !important;
+  transition: 0.3s all ease !important;
+  box-shadow: none !important;
+}
+
+:host ::ng-deep .ngx-pagination li.pagination-previous a,
+:host ::ng-deep .ngx-pagination li.pagination-previous span,
+:host ::ng-deep .ngx-pagination li.pagination-next a,
+:host ::ng-deep .ngx-pagination li.pagination-next span {
+  background: transparent !important;
+  color: #36304a !important;
+  border-radius: 30px !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  padding: 8px 18px !important;
+  min-width: 120px !important; 
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+}
+
+:host ::ng-deep .ngx-pagination li.pagination-previous a:hover,
+:host ::ng-deep .ngx-pagination li.pagination-next a:hover {
+  background: #eceaf3 !important;
+  color: #36304a !important;
+}
+
+:host ::ng-deep .ngx-pagination li.disabled span,
+:host ::ng-deep .ngx-pagination li.disabled a {
+  background: transparent !important;
+  color: #bbb !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  padding: 8px 18px !important;  
+  min-width: 120px !important;    
+}
+
+:host ::ng-deep .ngx-pagination li {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 2px !important;
+  padding: 0 !important;
+}
