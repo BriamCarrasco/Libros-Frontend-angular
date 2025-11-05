@@ -8,7 +8,7 @@ describe('AdminLibrosComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AdminLibrosComponent]
+      declarations: [AdminLibrosComponent],
     });
     fixture = TestBed.createComponent(AdminLibrosComponent);
     component = fixture.componentInstance;

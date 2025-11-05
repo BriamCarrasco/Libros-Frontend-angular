@@ -1,0 +1,132 @@
+select,
+select option {
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif !important;
+}
+
+select {
+  border-radius: 50rem !important;
+}
+
+body,
+.custom-table {
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background-color: #3c373e;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 20px;
+  color: #fff;
+}
+
+.custom-table {
+  min-width: 900px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 24px rgba(54, 48, 74, 0.1);
+  overflow: hidden;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.custom-table thead tr,
+.custom-table thead th {
+  padding-bottom: 30px;
+  border-top: none;
+  border-bottom: none !important;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  background: #36304a;
+}
+
+.custom-table th,
+.custom-table td {
+  vertical-align: middle;
+  padding: 20px 24px;
+  border: none;
+  font-size: 1.05rem;
+  color: #222;
+  font-weight: 400;
+  font-family: inherit;
+  background: transparent;
+  transition: 0.3s all ease;
+}
+
+.custom-table tbody th small,
+.custom-table tbody td small {
+  color: rgba(34, 34, 34, 0.5);
+  font-weight: 300;
+}
+
+.custom-table tbody th a,
+.custom-table tbody td a {
+  color: #888;
+  transition: color 0.3s;
+}
+
+.custom-table tbody th .more,
+.custom-table tbody td .more {
+  color: #888;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  background: transparent;
+}
+
+.custom-table tbody tr {
+  background: #eceaf3;
+  color: #222;
+  transition: 0.3s all ease;
+}
+
+.custom-table tbody tr:hover td,
+.custom-table tbody tr:focus td {
+  color: #222;
+  background: #e0dff0;
+}
+
+.custom-table tbody tr:hover td a,
+.custom-table tbody tr:focus td a {
+  background: #e0dff0;
+  color: #fdd114;
+}
+
+.custom-table tbody tr:hover td .more,
+.custom-table tbody tr:focus td .more {
+  color: #fdd114;
+  background: #e0dff0;
+}
+
+.custom-button {
+  background: #36304a;
+  border: none;
+  color: #fff;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: 0.3s all ease;
+}
+
+.custom-button-secondary {
+  background: #888;
+  border: none;
+  color: #fff;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: 0.3s all ease;
+}
+
