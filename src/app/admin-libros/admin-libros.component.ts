@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminLibrosService, Libro } from '../services/libros.service';
+import { ToastrService } from 'ngx-toastr'; // <-- Agrega esta línea
 
 declare var bootstrap: any;
 
@@ -16,7 +17,10 @@ export class AdminLibrosComponent implements OnInit {
   libroEditando: Partial<Libro> = {};
   page: number = 1;
 
-  constructor(private librosService: AdminLibrosService) {}
+  constructor(
+    private librosService: AdminLibrosService,
+    private toastr: ToastrService 
+  ) {}
 
   ngOnInit(): void {
     this.cargarLibros();
@@ -88,15 +92,21 @@ export class AdminLibrosComponent implements OnInit {
 
       if (this.accionModal === 'crear') {
         this.librosService.createLibro(this.libroEditando as Libro).subscribe({
-          next: () => this.cargarLibros(),
-          error: () => alert('Error al crear libro'),
+          next: () => {
+            this.cargarLibros();
+            this.toastr.success('Libro creado correctamente', 'Éxito');
+          },
+          error: () => this.toastr.error('Error al crear libro', 'Error'),
         });
       } else if (this.accionModal === 'editar' && this.libroEditando.idLibro) {
         this.librosService
           .updateLibro(this.libroEditando.idLibro, this.libroEditando as Libro)
           .subscribe({
-            next: () => this.cargarLibros(),
-            error: () => alert('Error al actualizar libro'),
+            next: () => {
+              this.cargarLibros();
+              this.toastr.success('Libro actualizado correctamente', 'Éxito');
+            },
+            error: () => this.toastr.error('Error al actualizar libro', 'Error'),
           });
       }
     }
@@ -114,9 +124,14 @@ export class AdminLibrosComponent implements OnInit {
   eliminarLibro(id: number): void {
     if (confirm('¿Seguro que deseas eliminar este libro?')) {
       this.librosService.deleteLibro(id).subscribe({
-        next: () => this.cargarLibros(),
-        error: () => alert('Error al eliminar libro'),
+        next: () => {
+          this.cargarLibros();
+          this.toastr.success('Libro eliminado correctamente', 'Éxito');
+        },
+        error: () => this.toastr.error('Error al eliminar libro', 'Error'),
       });
     }
   }
+
+  
 }
