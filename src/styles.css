@@ -1,4 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap');
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
 body {
   font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  margin: 0;
+}
+.app-shell {
+  overflow: hidden;
+}
+.app-content {
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
 }

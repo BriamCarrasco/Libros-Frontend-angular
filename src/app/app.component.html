@@ -1,9 +1,7 @@
-<div class="vh-100 d-flex flex-column" style="overflow: hidden;">
+<div class="d-flex flex-column vh-100 app-shell">
   <app-topbar></app-topbar>
-  <div class="d-flex flex-grow-1" style="min-height: 0;">
-    <div class="flex-grow-1 pt-0 px-4" style="overflow-y: auto;">
-      <router-outlet></router-outlet>
-    </div>
+  <div class="flex-grow-1 app-content">
+    <router-outlet></router-outlet>
   </div>
   <app-footer></app-footer>
 </div>
