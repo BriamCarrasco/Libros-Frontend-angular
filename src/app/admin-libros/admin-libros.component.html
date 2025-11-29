@@ -140,42 +140,46 @@
         <form (ngSubmit)="guardarLibro()" #formLibro="ngForm">
           <div class="modal-body" style="background: #eceaf3">
             <div class="mb-3">
-              <label class="form-label">Título</label>
+              <label class="form-label" for="tituloInput">Título</label>
               <input
                 type="text"
                 class="form-control rounded-pill"
                 [(ngModel)]="libroEditando.titulo"
                 name="titulo"
                 required
+                id="tituloInput"
               />
             </div>
             <div class="mb-3">
-              <label class="form-label">Autor</label>
+              <label class="form-label" for="autorInput">Autor</label>
               <input
                 type="text"
                 class="form-control rounded-pill"
                 [(ngModel)]="libroEditando.autor"
                 name="autor"
+                id="autorInput"
                 required
               />
             </div>
             <div class="mb-3">
-              <label class="form-label">Año de Publicación</label>
+              <label class="form-label" for="anioPublicacionInput">Año de Publicación</label>
               <input
                 type="number"
                 class="form-control rounded-pill"
                 [(ngModel)]="libroEditando.anioPublicacion"
                 name="anioPublicacion"
+                id="anioPublicacionInput"
                 required
               />
             </div>
             <div class="mb-3">
-              <label class="form-label">Género</label>
+              <label class="form-label" for="generoInput">Género</label>
               <input
                 type="text"
                 class="form-control rounded-pill"
                 [(ngModel)]="libroEditando.genero"
                 name="genero"
+                id="generoInput"
                 required
               />
             </div>

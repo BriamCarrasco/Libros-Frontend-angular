@@ -18,8 +18,8 @@ export class AdminLibrosComponent implements OnInit {
   page: number = 1;
 
   constructor(
-    private librosService: AdminLibrosService,
-    private toastr: ToastrService 
+    private readonly librosService: AdminLibrosService,
+    private readonly toastr: ToastrService 
   ) {}
 
   ngOnInit(): void {
