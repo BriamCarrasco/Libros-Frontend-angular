@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminLibrosService, Libro } from '../services/libros.service';
-import { ToastrService } from 'ngx-toastr'; // <-- Agrega esta línea
+import { ToastrService } from 'ngx-toastr'; 
 
-declare var bootstrap: any;
+declare const bootstrap: any;
 
 @Component({
   selector: 'app-admin-libros',
@@ -19,7 +19,7 @@ export class AdminLibrosComponent implements OnInit {
 
   constructor(
     private readonly librosService: AdminLibrosService,
-    private readonly toastr: ToastrService 
+    private readonly toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -40,9 +40,11 @@ export class AdminLibrosComponent implements OnInit {
       return;
     }
 
+    let id: number; 
+
     switch (this.filtro) {
       case 'id':
-        const id = Number(valor);
+        id = Number(valor);
         if (id > 0) {
           this.librosService.getLibroById(id).subscribe({
             next: (libro) => (this.libros = libro ? [libro] : []),
@@ -106,7 +108,8 @@ export class AdminLibrosComponent implements OnInit {
               this.cargarLibros();
               this.toastr.success('Libro actualizado correctamente', 'Éxito');
             },
-            error: () => this.toastr.error('Error al actualizar libro', 'Error'),
+            error: () =>
+              this.toastr.error('Error al actualizar libro', 'Error'),
           });
       }
     }
@@ -132,6 +135,4 @@ export class AdminLibrosComponent implements OnInit {
       });
     }
   }
-
-  
 }

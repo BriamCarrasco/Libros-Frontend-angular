@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { catchError } from 'rxjs';
+import { Observable, catchError } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AdminLibrosService {
-  private librosUrl = 'http://localhost:8082/libros';
+  private readonly librosUrl = 'http://localhost:8082/libros';
 
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   getLibros(): Observable<Libro[]> {
     return this.http.get<Libro[]>(this.librosUrl).pipe(
