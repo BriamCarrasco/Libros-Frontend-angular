@@ -9,7 +9,7 @@ import { Component, signal, OnDestroy } from '@angular/core';
 })
 export class TopbarComponent implements OnDestroy {
   fechaHora = signal('');
-  private intervaloId: any;
+  private readonly intervaloId: any;
 
   constructor() {
     this.updateDateTime();
